@@ -18,7 +18,7 @@ params <- list(
   mu.h = 1/(70 * 365)
 )
 
-Hs <- 60
+Hs <- 330
 
 eta.1 <- c(0, Hs * params$b1 + 1500 * params$a1)
 eta.2 <- c(0, Hs * params$b2 + 1500 * params$a2)
@@ -36,7 +36,7 @@ y0 <- c(V1s = NA, V1i = 0,
         Rs = 1500, Ri = 1,
         Hs = Hs, He = 0, Hi = 0)
 
-t = 0:150
+t = 0:2500
 
 source("ModelFunction.R")
 
@@ -78,7 +78,7 @@ p <- ggplot(out.prev.l) + geom_line(aes(x = t, y = (value), linetype = variable)
 
 p
 
-pdf("Results/Sand-fly-scenarios.pdf", width = 12, height = 5)
+pdf("Results/Sand-fly-scenarios-SupplMat.pdf", width = 12, height = 5)
 p
 dev.off()
 
